@@ -72,3 +72,34 @@ async function getAnimeCoverImages(animeTitles) {
 
   return coverImageUrls;
 }
+
+async function getAnimePage(animeTitle) {
+  const query = `
+    query ($search: String) {
+      Media(search: $search, type: ANIME) {
+        siteUrl
+      }
+    }
+  `;
+
+  const variables = {
+    search: animeTitle
+  };
+
+  const response = await fetch('https://graphql.anilist.co/', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+    },
+    body: JSON.stringify({
+      query: query,
+      variables: variables
+    })
+  });
+
+  const data = await response.json();
+  const animePageUrl = data.data.Media.siteUrl;
+
+  return animePageUrl;
+}

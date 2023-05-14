@@ -83,15 +83,21 @@
             animeRanking.textContent = i + 1;
             animeRankingCell.appendChild(animeRanking);
     
+            const animeCoverLink = document.createElement('a');
+            animeCoverLink.href = await getAnimePage(animeList[i]);
             const animeCoverImage = document.createElement('img');
             animeCoverImage.src = coverImageUrls[i];
             animeCoverImage.alt = animeList[i];
             animeCoverImage.style.width = '4vw';
-            animeCoverCell.appendChild(animeCoverImage);
+            animeCoverLink.appendChild(animeCoverImage);
+            animeCoverCell.appendChild(animeCoverLink);
     
+            const animeTitleLink = document.createElement('a');
+            animeTitleLink.href = await getAnimePage(animeList[i]);
             const animeTitle = document.createElement('h2');
             animeTitle.textContent = animeList[i];
-            animeNameCell.appendChild(animeTitle);
+            animeTitleLink.appendChild(animeTitle);
+            animeNameCell.appendChild(animeTitleLink);
     
             animeTableRow.appendChild(animeRankingCell);
             animeTableRow.appendChild(animeCoverCell);
@@ -102,6 +108,7 @@
         loadTopAnimes();
       </script>
     </div>
+    
 
     
     <div class="container mt-5">
