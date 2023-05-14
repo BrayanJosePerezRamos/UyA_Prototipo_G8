@@ -5,3 +5,7 @@
 #anime-table td {
   vertical-align: middle;
 }
+#anime-table td h2 {
+  font-size: 1.5vw;
+}
+
