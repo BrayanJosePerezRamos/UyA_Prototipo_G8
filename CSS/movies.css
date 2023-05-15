@@ -1,8 +1,0 @@
-#movies-row {
-  overflow-x: auto;
-}
-
-#movies-row .col-2 {
-  width: calc(100% / 6);
-  min-width: 150px;
-}
