@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <head> 
   <script src="./JS/validacion.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="./CSS/error.css">
 
 </head>
 <body> </body>
@@ -41,7 +42,7 @@
       </a>
     </section>
     <!-- Section: Social media -->
-
+    
     <!-- Section: Form -->
     <section class="">
       <form action="" id="formularioCorreo">
@@ -54,7 +55,7 @@
             </p>
           </div>
           <!--Grid column-->
-
+    
           <!--Grid column-->
           <div class="col-md-5 col-12">
             <!-- Email input -->
@@ -64,18 +65,17 @@
                 Ingresa un email válido
               </div>
             </div>
+            <!-- Error message container -->
+            <div id="errorMessageContainer" class="d-none bg-danger text-white p-2 rounded">
+              Por favor, ingrese una dirección de correo electrónico válida.
+            </div>
           </div>
-          
-          <script>
-            validateEmailForm();
-          </script>
-            
           <!--Grid column-->
-
+    
           <!--Grid column-->
           <div class="col-auto">
             <!-- Submit button -->
-            <button type="submit" class="btn btn-outline-light mb-4">
+            <button type="submit" class="btn btn-outline-light mb-4" onclick="validateEmailForm(event)">
               Subscribe
             </button>
           </div>
@@ -84,6 +84,7 @@
         <!--Grid row-->
       </form>
     </section>
+
 
     <!-- Section: Links -->
     <section class="text-center">
