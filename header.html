@@ -1,0 +1,49 @@
+ <!-- Cabecera logo y titulo centrado, y el iniciar sesion a la derecha del todo -->
+    <!-- Cabecera -->
+    <div class="bg-dark text-white text-center py-3 d-flex justify-content-between align-items-center">
+      <div class="d-flex align-items-center">
+        <img src="img/french-fries.png" width="50e" alt="Logo de MyMediaList" class="navbar-logo">
+        <h1><a class="navbar-text" href="./index.html" style="text-decoration: none;">MyMediaList</a></h1>
+
+
+      </div>
+      <button class="btn btn-outline-light">Iniciar Sesión/Registrarse</button>
+    </div>
+
+    <!-- Barra de navegación -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <!-- Botón de hamburguesa para navegación en dispositivos móviles -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <!-- Elementos de navegación -->
+            <li class="nav-item">
+              <a class="nav-link" href="#">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Películas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Series</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Anime</a>
+            </li>
+          </ul>
+        </div>
+        
+        <!-- Barra de búsqueda -->
+        <form class="form-inline">
+          <div class="input-group ml-auto">
+            <input class="form-control" type="search" placeholder="Buscar" aria-label="Buscar">
+            <div class="input-group-append">
+              <button class="btn btn-outline-light" type="submit">Buscar</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </nav>

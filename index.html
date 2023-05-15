@@ -4,63 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MyMediaList</title>
-    <link rel="stylesheet" href="./title.css">
-    <link rel="stylesheet" href="./table.css">
+    <link rel="stylesheet" href="./CSS/title.css">
+    <link rel="stylesheet" href="./CSS/table.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <script src="./JS/APIrequest.js" type="text/javascript"></script>
+    <script src="./JS/include.js" type="text/javascript"></script>
   </head>
   <body>
-    <!-- Cabecera logo y titulo centrado, y el iniciar sesion a la derecha del todo -->
-    <!-- Cabecera -->
-    <div class="bg-dark text-white text-center py-3 d-flex justify-content-between align-items-center">
-      <div class="d-flex align-items-center">
-        <img src="img/french-fries.png" width="50e" alt="Logo de MyMediaList" class="navbar-logo">
-        <h1><a class="navbar-text" href="./index.html" style="text-decoration: none;">MyMediaList</a></h1>
-
-
-      </div>
-      <button class="btn btn-outline-light">Iniciar Sesión/Registrarse</button>
+    <div id="header-container"></div>
+    <script>includeHeader();</script>
     </div>
-
-    <!-- Barra de navegación -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container">
-        <!-- Botón de hamburguesa para navegación en dispositivos móviles -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <!-- Elementos de navegación -->
-            <li class="nav-item">
-              <a class="nav-link" href="#">Inicio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Películas</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Series</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Anime</a>
-            </li>
-          </ul>
-        </div>
-        
-        <!-- Barra de búsqueda -->
-        <form class="form-inline">
-          <div class="input-group ml-auto">
-            <input class="form-control" type="search" placeholder="Buscar" aria-label="Buscar">
-            <div class="input-group-append">
-              <button class="btn btn-outline-light" type="submit">Buscar</button>
-            </div>
-          </div>
-        </form>
-      </div>
-    </nav>
 
     <!-- breadcrump -->
     <div class="container py-1"> <!-- Se envuelve el breadcrumb en un contenedor -->
@@ -189,114 +144,8 @@
     <!-- Ponemos un espacio entre el footer y el último elemento -->
     <br> <!-- Espacio añadido -->
     <!-- Footer -->
-    <footer class="bg-dark text-center text-white">
-      <!-- Grid container -->
-      <div class="container p-4">
-        <!-- Section: Social media -->
-        <section class="mb-4">
-          <!-- Facebook -->
-          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button" aria-label="Botón Facebook">
-            <i class="fab fa-facebook-f"></i>
-          </a>
-
-          <!-- Twitter -->
-          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button" aria-label="Botón Twitter">
-            <i class="fab fa-twitter"></i>
-          </a>
-
-          <!-- Google -->
-          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button" aria-label="Botón Google">
-            <i class="fab fa-google"></i>
-          </a>
-
-          <!-- Instagram -->
-          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button" aria-label="Botón Instagram">
-            <i class="fab fa-instagram"></i>
-          </a>
-
-          <!-- Linkedin -->
-          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button" aria-label="Botón Linkedin">
-            <i class="fab fa-linkedin-in"></i>
-          </a>
-
-          <!-- Github -->
-          <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button" aria-label="Botón Github">
-            <i class="fab fa-github"></i>
-          </a>
-        </section>
-        <!-- Section: Social media -->
-
-        <!-- Section: Form -->
-        <section class="">
-          <form action="" id="formularioCorreo">
-            <!--Grid row-->
-            <div class="row d-flex justify-content-center">
-              <!--Grid column-->
-              <div class="col-auto">
-                <p class="pt-2">
-                  <strong>Suscríbete a nuestro boletín</strong>
-                </p>
-              </div>
-              <!--Grid column-->
-
-              <!--Grid column-->
-              <div class="col-md-5 col-12">
-                <!-- Email input -->
-                <div class="form-outline form-white mb-4">
-                  <input type="email" id="CorreoBoletin" class="form-control" aria-describedby="errorCorreo" placeholder="ejemplo@correo.com" />
-                  <label class="form-label" for="CorreoBoletin"></label>
-                  <div id="errorCorreo" role="alert" class="visually-hidden"></div>
-                </div>
-              </div>
-              <!--Grid column-->
-
-              <!--Grid column-->
-              <div class="col-auto">
-                <!-- Submit button -->
-                <button type="submit" class="btn btn-outline-light mb-4">
-                  Subscribe
-                </button>
-              </div>
-              <!--Grid column-->
-            </div>
-            <!--Grid row-->
-          </form>
-        </section>
-
-        <!-- Section: Links -->
-        <section class="text-center">
-          <!--Grid row-->
-          <div class="row justify-content-between">
-            <!--Grid column-->
-            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-              <h5 class="text-uppercase">
-                <a href="./mapaWeb.html" class="text-white">Mapa Web</a>
-              </h5>
-            </div>
-            <!--Grid column-->
-
-            <!--Grid column-->
-            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-              <h5 class="text-uppercase">
-                <a href="./index.html" class="text-white">Accesibilidad</a>
-              </h5>
-            </div>
-            <!--Grid column-->
-
-            <!--Grid column-->
-            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-              <h5 class="text-uppercase">
-                <a href="./contacto.html" class="text-white">Contacto</a>
-              </h5>
-            </div>
-            <!--Grid column-->
-          </div>
-          <!--Grid row-->
-        </section>
-        <!-- Section: Links -->
-      </div>
-      <!-- Grid container -->
-    </footer>
+    <div id="footer-container"></div>
+    <script>includeFooter();</script>
     <!-- Footer -->
 
     <!-- Enlace a los scripts de Bootstrap -->
