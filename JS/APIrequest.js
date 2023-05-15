@@ -141,16 +141,84 @@ async function getTopMovies(perPage = 10) {
   return seriesTitles;
 }
 
+async function getMoviePage(animeTitle) {
+  const query = `
+    query ($search: String) {
+      Media(search: $search, type: ANIME, format: MOVIE) {
+        siteUrl
+      }
+    }
+  `;
 
+  const variables = {
+    search: animeTitle
+  };
 
-async function displayMovieList(year) {
-  const movieTitles = await getTopMovies(year);
+  const response = await fetch('https://graphql.anilist.co/', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+    },
+    body: JSON.stringify({
+      query: query,
+      variables: variables
+    })
+  });
 
-  const ul = document.getElementById('movie-table');
+  const data = await response.json();
+  const animePageUrl = data.data.Media.siteUrl;
+
+  return animePageUrl;
+}
+
+async function getMovieCoverImages(movieTitles) {
+  const query = `
+    query ($search: String) {
+      Media(search: $search, type: ANIME, format: MOVIE) {
+        coverImage {
+          large
+        }
+      }
+    }
+  `;
+
+  const coverImageUrls = [];
 
   for (let i = 0; i < movieTitles.length; i++) {
-    const li = document.createElement('li');
-    li.textContent = movieTitles[i];
-    ul.appendChild(li);
+    const variables = {
+      search: movieTitles[i]
+    };
+
+    const response = await fetch('https://graphql.anilist.co/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+      },
+      body: JSON.stringify({
+        query: query,
+        variables: variables
+      })
+    });
+
+    const data = await response.json();
+    const coverImageUrl = data.data.Media.coverImage.large;
+    coverImageUrls.push(coverImageUrl);
   }
+
+  return coverImageUrls;
 }
+
+// async function displayMovieList(year) {
+//   const movieTitles = await getTopMovies(year);
+//   console.log(movieTitles);
+
+//   const ul = document.getElementById('movie-table');
+
+//   for (let i = 0; i < movieTitles.length; i++) {
+//     const li = document.createElement('li');
+//     li.textContent = movieTitles[i];
+//     ul.appendChild(li);
+//   }
+// }
