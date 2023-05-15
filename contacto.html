@@ -120,54 +120,10 @@
       </form>
     
       <script>
-        const form = document.getElementById("myForm");
-        const nombreInput = document.getElementById("nombre");
-        const emailInput = document.getElementById("email");
-        const descripcionInput = document.getElementById("descripcion");
-        const nombreError = document.getElementById("nombreError");
-        const emailError = document.getElementById("emailError");
-        const descripcionError = document.getElementById("descripcionError");
-    
-        form.addEventListener("submit", (event) => {
-          event.preventDefault();
-          let isValid = true;
-    
-          if (isNameEmpty(nombreInput.value)) {
-            nombreInput.classList.add("is-invalid");
-            nombreError.style.display = "block";
-            isValid = false;
-          } else {
-            nombreInput.classList.remove("is-invalid");
-            nombreError.style.display = "none";
-          }
-    
-          if (!isValidEmail(emailInput.value)) {
-            emailInput.classList.add("is-invalid");
-            emailError.style.display = "block";
-            isValid = false;
-          } else {
-            emailInput.classList.remove("is-invalid");
-            emailError.style.display = "none";
-          }
-    
-          if (!isValidDescription(descripcionInput.value)) {
-            descripcionInput.classList.add("is-invalid");
-            descripcionError.style.display = "block";
-            isValid = false;
-          } else {
-            descripcionInput.classList.remove("is-invalid");
-            descripcionError.style.display = "none";
-          }
-    
-          if (isValid) {
-            form.submit();
-          }
-        });
+        validateContactForm();
       </script>
     </div> 
-    
-    
-   
+  
     <div class="container mt-5">
       
     </div>
@@ -235,9 +191,28 @@
                 <div class="form-outline form-white mb-4">
                   <input type="email" id="CorreoBoletin" class="form-control" aria-describedby="errorCorreo" placeholder="ejemplo@correo.com" />
                   <label class="form-label" for="CorreoBoletin">Correo electrónico</label>
-                  <div id="errorCorreo" role="alert" class="visually-hidden"></div>
+                  <div id="errorCorreo" role="alert" class="invalid-feedback" style="display: none;">
+                    Ingresa un email válido
+                  </div>
                 </div>
               </div>
+              
+              <script>
+                const emailInput = document.getElementById("CorreoBoletin");
+                const emailError = document.getElementById("errorCorreo");
+              
+                emailInput.addEventListener("blur", (event) => {
+                  const value = event.target.value;
+                  if (!isValidEmail(value)) {
+                    emailInput.classList.add("is-invalid");
+                    emailError.style.display = "block";
+                  } else {
+                    emailInput.classList.remove("is-invalid");
+                    emailError.style.display = "none";
+                  }
+                });
+              </script>
+                
               <!--Grid column-->
 
               <!--Grid column-->

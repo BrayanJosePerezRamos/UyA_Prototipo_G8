@@ -13,3 +13,49 @@ function isValidDescription(description) {
   // Verificar si la descripción está vacía o solo contiene espacios en blanco
   return description.trim().length > 0;
 }
+
+function validateContactForm(){
+  const form = document.getElementById("myForm");
+  const nombreInput = document.getElementById("nombre");
+  const emailInput = document.getElementById("email");
+  const descripcionInput = document.getElementById("descripcion");
+  const nombreError = document.getElementById("nombreError");
+  const emailError = document.getElementById("emailError");
+  const descripcionError = document.getElementById("descripcionError");
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    let isValid = true;
+
+    if (isNameEmpty(nombreInput.value)) {
+      nombreInput.classList.add("is-invalid");
+      nombreError.style.display = "block";
+      isValid = false;
+    } else {
+      nombreInput.classList.remove("is-invalid");
+      nombreError.style.display = "none";
+    }
+
+    if (!isValidEmail(emailInput.value)) {
+      emailInput.classList.add("is-invalid");
+      emailError.style.display = "block";
+      isValid = false;
+    } else {
+      emailInput.classList.remove("is-invalid");
+      emailError.style.display = "none";
+    }
+
+    if (!isValidDescription(descripcionInput.value)) {
+      descripcionInput.classList.add("is-invalid");
+      descripcionError.style.display = "block";
+      isValid = false;
+    } else {
+      descripcionInput.classList.remove("is-invalid");
+      descripcionError.style.display = "none";
+    }
+
+    if (isValid) {
+      form.submit();
+    }
+  });
+}
