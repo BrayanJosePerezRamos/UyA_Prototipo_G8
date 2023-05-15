@@ -1,0 +1,33 @@
+/* #movie-table {
+  font-size: 1.5vw;
+} */
+/* #movie-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#movie-table td, #movie-table th {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+  font-size: 1.5vw;
+}
+
+#movie-table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  background-color: #4CAF50;
+  color: white;
+} */
+
+#movie-table {
+  text-align: center;
+}
+
+#movie-table td {
+  vertical-align: middle;
+}
+#movie-table td h2 {
+  font-size: 1vw;
+}
+
