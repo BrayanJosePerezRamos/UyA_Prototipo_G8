@@ -3,7 +3,7 @@ const correoInput = document.getElementById('CorreoBoletin');
 const errorCorreo = document.getElementById('errorCorreo');
 
 // Agregar un listener para el evento de submit del formulario
-const formulario = document.getElementById('formulario');
+const formulario = document.getElementById('formularioCorreo');
 formulario.addEventListener('submit', function(event) {
   // Detener el envío del formulario para manejar la validación manualmente
   event.preventDefault();
