@@ -60,12 +60,15 @@
             const movieCoverCell = document.createElement('td');
             const movieTitleCell = document.createElement('td');
       
-            // crear imagen de portada y establecer la fuente y el texto alternativo
+            // crear enlace para la portada y envolver la imagen dentro de él
+            const movieCoverLink = document.createElement('a');
+            movieCoverLink.href = await getMoviePage(movies[i]);
             const movieCoverImg = document.createElement('img');
             movieCoverImg.style.width = '5vw'; // establecer el ancho en 5vw
             movieCoverImg.src = coverImages[i];
             movieCoverImg.alt = `${movies[i]} cover image`;
-            movieCoverCell.appendChild(movieCoverImg);
+            movieCoverLink.appendChild(movieCoverImg);
+            movieCoverCell.appendChild(movieCoverLink);
       
             // crear enlace para el título y establecer el href y el texto
             const movieTitleLink = document.createElement('a');
@@ -87,8 +90,8 @@
           }
         }
       
-        displayMovieList(20);
-      </script>      
+        displayMovieList(25);
+      </script> 
     </div>
     
     
