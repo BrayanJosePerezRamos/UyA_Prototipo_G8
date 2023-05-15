@@ -103,3 +103,117 @@ async function getAnimePage(animeTitle) {
 
   return animePageUrl;
 }
+
+
+///################Películas///#####################
+async function getTopMovies(perPage = 15) {
+  const query = `
+    query ($perPage: Int) {
+      Page(perPage: $perPage) {
+        media(type: ANIME, format: MOVIE, sort: POPULARITY_DESC) {
+          title {
+            romaji
+          }
+        }
+      }
+    }
+  `;
+
+  const variables = {
+    perPage: perPage
+  };
+
+  const response = await fetch('https://graphql.anilist.co/', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+    },
+    body: JSON.stringify({
+      query: query,
+      variables: variables
+    })
+  });
+
+  const data = await response.json();
+  const seriesTitles = data.data.Page.media.map(media => media.title.romaji);
+
+  return seriesTitles;
+}
+
+
+
+async function displayMovieList(year) {
+  const movies = await getTopMovies();
+  const coverImageUrls = await getMovieCoverImages(movies.map(movie => movie.title)); // Obtener las URLs de las carátulas
+
+  const table = document.getElementById('movies-table');
+
+  let row = table.insertRow();
+  let columnCount = 1;
+
+  for (let i = 0; i < movies.length; i++) {
+    if (i % 5 === 0) {
+      row = table.insertRow();
+      columnCount++;
+    }
+    const cell = row.insertCell();
+
+    const movieTitle = movies[i].title;
+    const coverImageUrl = coverImageUrls[i];
+
+    const img = document.createElement('img'); // Crear el elemento img
+    img.src = coverImageUrl; // Asignar la URL de la carátula al src del img
+    img.alt = movieTitle; // Asignar el título de la película como alt del img
+    img.classList.add('movie-cover'); // Agregar la clase CSS para controlar el tamaño del img
+
+    cell.appendChild(img); // Agregar el img a la celda
+    cell.appendChild(document.createElement('br')); // Agregar un salto de línea
+    cell.appendChild(document.createTextNode(movieTitle)); // Agregar el título de la película
+
+    if (columnCount === 7) {
+      columnCount = 1;
+    }
+  }
+}
+
+
+
+async function getMovieCoverImages(movieTitles) {
+  const query = `
+    query ($search: String) {
+      Media(search: $search, type: ANIME, format: MOVIE) {
+        coverImage {
+          large
+        }
+      }
+    }
+  `;
+
+  const coverImageUrls = [];
+
+  for (let i = 0; i < movieTitles.length; i++) {
+    const variables = {
+      search: movieTitles[i]
+    };
+
+    const response = await fetch('https://graphql.anilist.co/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+      },
+      body: JSON.stringify({
+        query: query,
+        variables: variables
+      })
+    });
+
+    const data = await response.json();
+    const coverImageUrl = data.data.Media.coverImage.large;
+    coverImageUrls.push(coverImageUrl);
+  }
+
+  return coverImageUrls;
+}
+
