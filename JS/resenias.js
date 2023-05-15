@@ -31,14 +31,17 @@ reseñas.reseñas.forEach(reseña => {
   const tituloElement = document.createElement('h3');
   tituloElement.classList.add('mb-2'); // Agregar clase de Bootstrap
   tituloElement.textContent = reseña.titulo;
+  tituloElement.setAttribute('tabindex', '0'); // Establecer tabindex="0"
 
   // Crear los elementos <p> para el comentario, nombre y fecha de la reseña
   const comentarioElement = document.createElement('p');
   comentarioElement.textContent = reseña.comentario;
+  comentarioElement.setAttribute('tabindex', '0'); // Establecer tabindex="0"
 
   const nombreFechaElement = document.createElement('p');
   nombreFechaElement.classList.add('text-muted', 'mb-0'); // Agregar clases de Bootstrap
   nombreFechaElement.textContent = `Por: ${reseña.nombre} - ${reseña.fecha}`;
+  nombreFechaElement.setAttribute('tabindex', '0'); // Establecer tabindex="0"
 
   // Agregar los elementos al elemento <li>
   li.appendChild(tituloElement);
@@ -48,6 +51,7 @@ reseñas.reseñas.forEach(reseña => {
   // Agregar el elemento <li> al elemento <ul>
   listaReseñas.appendChild(li);
 });
+
 
 // Agregar clase de Bootstrap al elemento <ul>
 listaReseñas.classList.add('list-group');
