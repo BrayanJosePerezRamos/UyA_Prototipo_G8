@@ -47,8 +47,8 @@
       <script>
         const movieTableBody = document.querySelector('#movie-table tbody');
         
-        async function displayMovieList(year) {
-          const movies = await getTopMovies(year);
+        async function displayMovieList(nPages) {
+          const movies = await getTopMovies(nPages);
           console.log(movies);
       
           const coverImages = await getMovieCoverImages(movies);
@@ -95,8 +95,10 @@
               rowCount = 0;
             }
           }
+          /// HAcemos que el spinner deje de verse
+          document.querySelector('#spinner').style.display = 'none';
         }
-        displayMovieList(23);
+        displayMovieList(20);
         </script> 
 
     </div>
