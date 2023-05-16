@@ -1,4 +1,6 @@
-async function getTopAnimes(season, year, perPage = 10) {
+///################Series///#####################
+
+async function getTopAnimes(season, year, perPage = 20) {
   const query = `
     query ($season: MediaSeason, $seasonYear: Int, $perPage: Int) {
       Page(perPage: $perPage) {

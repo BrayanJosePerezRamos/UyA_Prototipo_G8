@@ -1,0 +1,10 @@
+#series-table {
+  text-align: center;
+}
+
+#series-table td {
+  vertical-align: middle;
+}
+#series-table td h2 {
+  font-size: 1vw;
+}
