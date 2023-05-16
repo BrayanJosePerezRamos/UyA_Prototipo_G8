@@ -5,7 +5,7 @@
       <img src="./img/french-fries.png" width="50e" alt="Logo de MyMediaList" class="navbar-logo">
       <h1><a class="navbar-text" href="./index.html" style="text-decoration: none;">MyMediaList</a></h1>
     </div>
-    <button class="btn btn-outline-light">  <a class="nav-link" href="./login.html">Iniciar Sesión/Registrarse</a> </button>
+    <button class="btn btn-outline-light">  <a class="nav-link" href="login.html">Iniciar Sesión/Registrarse</a> </button>
   </div>
 
   <!-- Barra de navegación -->
