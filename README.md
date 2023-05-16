@@ -32,6 +32,7 @@ Recomendaciones para la presentación:
 - El buscador en moviles con pantallas finas a veces hace cosas extrañas.
 - Seguramente hay errores que se escapan, hay que revisar todo bien.
 - El boton de iniciar sesión se superpone en dispositivos verticales
+- Hacer algo con la lista de recomendaciones, ya que en moviles la lia
 
 ## Sugerencias de Adaycho:
 - Añadir páginas para las reseñas (pueden ser similar a las noticias).
