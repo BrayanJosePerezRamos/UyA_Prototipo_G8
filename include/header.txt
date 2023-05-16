@@ -9,14 +9,14 @@
   </div>
 
   <!-- Barra de navegación -->
-  <nav class="navbar navbar-expand-mg navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
     <div class="container-fluid">
       <!-- Botón de hamburguesa para navegación en dispositivos móviles -->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button id="navbar-toggler" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse" id="navbarNav">
+      <div class="navbar-collapse collapse" id="navbarNav">
         <ul class="navbar-nav">
           <!-- Elementos de navegación -->
           <li class="nav-item">
@@ -34,6 +34,26 @@
         </ul>
       </div>
 
+      <script>
+        const navbar = document.querySelector('.navbar-collapse');
+
+        // Detectar el evento de pérdida de foco
+        navbar.addEventListener('focusout', (event) => {
+          // Obtener el elemento que ha recibido el foco
+          const focusedElement = event.relatedTarget;
+
+          // Comprobar si el foco ha salido de la barra de navegación
+          if (!navbar.contains(focusedElement)) {
+            // Cerrar la barra de navegación
+            const navbarToggler = document.querySelector('.navbar-toggler');
+            const collapse = bootstrap.Collapse.getInstance(navbar);
+            if (collapse && navbarToggler.getAttribute('aria-expanded') === 'true') {
+              collapse.hide();
+            }
+          }
+        });
+      </script>
+
       <!-- Barra de búsqueda -->
       <form class="form-inline">
         <div class="input-group ml-auto">
@@ -45,3 +65,4 @@
       </form>
     </div>
   </nav>
+
