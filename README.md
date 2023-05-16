@@ -31,6 +31,7 @@ Recomendaciones para la presentación:
 - Arreglar el hecho que los datos de la API no cambian de tamaño (poco accesible).
 - El buscador en moviles con pantallas finas a veces hace cosas extrañas.
 - Seguramente hay errores que se escapan, hay que revisar todo bien.
+- El boton de iniciar sesión se superpone en dispositivos verticales
 
 ## Sugerencias de Adaycho:
 - Añadir páginas para las reseñas (pueden ser similar a las noticias).
