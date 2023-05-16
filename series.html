@@ -34,8 +34,8 @@
     
     <!-- Cuerpo de la página -->
     <div class="container mt-5">
-      <h2 tabindex="0">Películas</h2>
-      <table id="movie-table" class="table table-striped">
+      <h2 tabindex="0">Series</h2>
+      <table id="series-table" class="table table-striped">
         <tbody>
         </tbody>
       </table>
@@ -45,66 +45,66 @@
         </div>
       </div>
       <script>
-        const movieTableBody = document.querySelector('#movie-table tbody');
-        
-        async function displayMovieList(year) {
-          const movies = await getTopMovies(year);
-          console.log(movies);
-      
-          const coverImages = await getMovieCoverImages(movies);
-      
+        const seriesTableBody = document.querySelector('#series-table tbody');
+    
+        async function displaySeriesList(year) {
+          const series = await getTopAnimes('SPRING',year);
+          console.log(series);
+    
+          const coverImages = await getAnimeCoverImages(series);
+    
           let rowCount = 0;
-          let movieTableRow;
-          
-          for (let i = 0; i < movies.length; i++) {
+          let seriesTableRow;
+    
+          for (let i = 0; i < series.length; i++) {
             if (rowCount === 0) {
               // crear una nueva fila
-              movieTableRow = document.createElement('tr');
-              movieTableBody.appendChild(movieTableRow);
+              seriesTableRow = document.createElement('tr');
+              seriesTableBody.appendChild(seriesTableRow);
             }
-      
+    
             // crear celdas para la portada y el título
-            const movieCoverCell = document.createElement('td');
-            const movieTitleCell = document.createElement('td');
-      
+            const seriesCoverCell = document.createElement('td');
+            const seriesTitleCell = document.createElement('td');
+    
             // crear enlace para la portada y envolver la imagen dentro de él
-            const movieCoverLink = document.createElement('a');
-            movieCoverLink.href = await getMoviePage(movies[i]);
-            const movieCoverImg = document.createElement('img');
-            movieCoverImg.style.width = '5vw'; // establecer el ancho en 5vw
-            movieCoverImg.src = coverImages[i];
-            movieCoverImg.alt = `${movies[i]} cover image`;
-            movieCoverLink.appendChild(movieCoverImg);
-            movieCoverCell.appendChild(movieCoverLink);
-      
+            const seriesCoverLink = document.createElement('a');
+            seriesCoverLink.href = await getAnimePage(series[i]);
+            const seriesCoverImg = document.createElement('img');
+            seriesCoverImg.style.width = '5vw'; // establecer el ancho en 5vw
+            seriesCoverImg.src = coverImages[i];
+            seriesCoverImg.alt = `${series[i]} cover image`;
+            seriesCoverLink.appendChild(seriesCoverImg);
+            seriesCoverCell.appendChild(seriesCoverLink);
+    
             // crear enlace para el título y establecer el href y el texto
-            const movieTitleLink = document.createElement('a');
-            movieTitleLink.href = await getMoviePage(movies[i]);
-            const movieTitle = document.createElement('h2');
-            movieTitle.textContent = movies[i];
-            movieTitleLink.appendChild(movieTitle);
-            movieTitleCell.appendChild(movieTitleLink);
-      
+            const seriesTitleLink = document.createElement('a');
+            seriesTitleLink.href = await getAnimePage(series[i]);
+            const seriesTitle = document.createElement('h2');
+            seriesTitle.textContent = series[i];
+            seriesTitleLink.appendChild(seriesTitle);
+            seriesTitleCell.appendChild(seriesTitleLink);
+    
             // agregar celdas a la fila
-            movieTableRow.appendChild(movieCoverCell);
-            movieTableRow.appendChild(movieTitleCell);
-      
+            seriesTableRow.appendChild(seriesCoverCell);
+            seriesTableRow.appendChild(seriesTitleCell);
+    
             // aumentar el contador de fila y restablecerlo a 0 si llega a 5
             rowCount++;
             if (rowCount === 5) {
               rowCount = 0;
             }
           }
+    
+          // Ocultar el spinner después de cargar las series
+          document.getElementById('spinner').style.display = 'none';
         }
-        displayMovieList(23);
-        </script> 
-
+    
+        displaySeriesList(2023);
+      </script>
     </div>
     
     
-
-
-
     <div class="container mt-5">
       
     </div>
