@@ -48,7 +48,7 @@
         const seriesTableBody = document.querySelector('#series-table tbody');
     
         async function displaySeriesList(year) {
-          const series = await getTopAnimes('WINTER',year);
+          const series = await getTopAnimes('SPRING',year);
           console.log(series);
     
           const coverImages = await getAnimeCoverImages(series);
