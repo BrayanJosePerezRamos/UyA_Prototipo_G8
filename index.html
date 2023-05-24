@@ -57,7 +57,9 @@
             const animeCoverCell = document.createElement('td');
             const animeNameCell = document.createElement('td');
       
-            const animeRanking = document.createElement('h2');
+            const animeRanking = document.createElement('p');
+            // poner el texto en negrita
+            animeRanking.style.fontWeight = 'bold';
             animeRanking.textContent = i + 1;
             animeRankingCell.appendChild(animeRanking);
       
@@ -66,13 +68,15 @@
             const animeCoverImage = document.createElement('img');
             animeCoverImage.src = coverImageUrls[i];
             animeCoverImage.alt = animeList[i];
-            animeCoverImage.style.width = '5vw';
+            // ajustar el tamaño de la imagen para que al hacer zoom escale bien
+            animeCoverImage.style.width = '5em';
+            animeCoverImage.style.height = '15%';
             animeCoverLink.appendChild(animeCoverImage);
             animeCoverCell.appendChild(animeCoverLink);
       
             const animeTitleLink = document.createElement('a');
             animeTitleLink.href = await getAnimePage(animeList[i]);
-            const animeTitle = document.createElement('h2');
+            const animeTitle = document.createElement('p');
             animeTitle.textContent = animeList[i];
             animeTitleLink.appendChild(animeTitle);
             animeNameCell.appendChild(animeTitleLink);

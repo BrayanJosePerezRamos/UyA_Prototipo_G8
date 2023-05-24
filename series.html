@@ -34,7 +34,7 @@
     </div>   
     
     <!-- Cuerpo de la página -->
-    <div class="container mt-5">
+    <div class="container mt-5" id="table-container">
       <h2 tabindex="0">Series</h2>
       <table id="series-table" class="table table-striped">
         <tbody>
@@ -46,8 +46,12 @@
         </div>
       </div>
       <script>
+        window.addEventListener('load', function() {
+          const tableContainer = document.querySelector('#table-container');
+          tableContainer.classList.add('show-scrollbar');
+        });
+
         const seriesTableBody = document.querySelector('#series-table tbody');
-    
         async function displaySeriesList(year) {
           const series = await getTopAnimes('SPRING',year);
           console.log(series);
@@ -72,7 +76,8 @@
             const seriesCoverLink = document.createElement('a');
             seriesCoverLink.href = await getAnimePage(series[i]);
             const seriesCoverImg = document.createElement('img');
-            seriesCoverImg.style.width = '5vw'; // establecer el ancho en 5vw
+            seriesCoverImg.style.width = '5em'; // establecer el ancho en 5vw
+            seriesCoverImg.style.height = 'auto'; // establecer la altura en 5vw
             seriesCoverImg.src = coverImages[i];
             seriesCoverImg.alt = `${series[i]} cover image`;
             seriesCoverLink.appendChild(seriesCoverImg);
@@ -81,7 +86,7 @@
             // crear enlace para el título y establecer el href y el texto
             const seriesTitleLink = document.createElement('a');
             seriesTitleLink.href = await getAnimePage(series[i]);
-            const seriesTitle = document.createElement('h2');
+            const seriesTitle = document.createElement('p');
             seriesTitle.textContent = series[i];
             seriesTitleLink.appendChild(seriesTitle);
             seriesTitleCell.appendChild(seriesTitleLink);

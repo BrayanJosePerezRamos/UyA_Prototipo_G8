@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MyMediaList</title>
     <link rel="stylesheet" href="./CSS/title.css">
-    <link rel="stylesheet" href="./CSS/table.css">
     <link rel="stylesheet" href="./CSS/movie.css">
     <link rel="stylesheet" href="./CSS/spinner.css">
 
@@ -32,8 +31,14 @@
       </nav>
     </div>   
     
+    <!-- <style>
+      #table-container {
+        overflow-x: auto;
+      }
+    </style> -->
+
     <!-- Cuerpo de la página -->
-    <div class="container mt-5">
+    <div class="container mt-5" id="table-container">
       <h2 tabindex="0">Películas</h2>
       <table id="movie-table" class="table table-striped">
         <tbody>
@@ -45,6 +50,10 @@
         </div>
       </div>
       <script>
+        window.addEventListener('load', function() {
+          const tableContainer = document.querySelector('#table-container');
+          tableContainer.classList.add('show-scrollbar');
+        });
         const movieTableBody = document.querySelector('#movie-table tbody');
         
         async function displayMovieList(nPages) {
@@ -71,7 +80,8 @@
             const movieCoverLink = document.createElement('a');
             movieCoverLink.href = await getMoviePage(movies[i]);
             const movieCoverImg = document.createElement('img');
-            movieCoverImg.style.width = '5vw'; // establecer el ancho en 5vw
+            movieCoverImg.style.width = '5em'; // establecer el ancho en 5vw
+            movieCoverImg.style.height = 'auto'; // establecer la altura en 5vw
             movieCoverImg.src = coverImages[i];
             movieCoverImg.alt = `${movies[i]} cover image`;
             movieCoverLink.appendChild(movieCoverImg);
@@ -80,7 +90,7 @@
             // crear enlace para el título y establecer el href y el texto
             const movieTitleLink = document.createElement('a');
             movieTitleLink.href = await getMoviePage(movies[i]);
-            const movieTitle = document.createElement('h2');
+            const movieTitle = document.createElement('p');
             movieTitle.textContent = movies[i];
             movieTitleLink.appendChild(movieTitle);
             movieTitleCell.appendChild(movieTitleLink);
@@ -99,20 +109,7 @@
           document.querySelector('#spinner').style.display = 'none';
         }
         displayMovieList(20);
-        </script> 
-
-    </div>
-    
-    
-
-
-
-    <div class="container mt-5">
-      
-    </div>
-    
-    <div class="container mt-5">
-      
+      </script> 
     </div>
 
     <!-- Ponemos un espacio entre el footer y el último elemento -->
