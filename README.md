@@ -31,3 +31,4 @@ Recomendaciones para la presentación:
 - Página de mangas, información de accesibilidad.
 - Cambiar colores de las tablas (mejorarlas visualmente).
 - Seguramente hay errores que se escapan, hay que revisar todo bien.
+- Revisar breadcrumbs
