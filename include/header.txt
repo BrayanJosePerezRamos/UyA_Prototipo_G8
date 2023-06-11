@@ -57,7 +57,7 @@
       </script>
 
       <!-- Barra de búsqueda -->
-      <form class="form-inline float-end">
+      <form class="form-inline">
         <div class="input-group ml-auto">
           <input class="form-control" type="search" placeholder="Buscar" aria-label="Buscar">
           <div class="input-group-append">
