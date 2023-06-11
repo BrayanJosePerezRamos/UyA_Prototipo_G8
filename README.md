@@ -25,8 +25,6 @@ Recomendaciones para la presentación:
 - Se aconseja, aunque no se exige que elaboren una presentación que les sirva de guión.
 
 ## Lista de tareas pendientes
-- Arreglar los footer para que se adapten a distintas pantallas.
-    - Este fallo está semiarreglado, ya que el footer se pega a la zona baja pero al desamplair la página se despega. Se debería cambiar el css del footer por uno general de la página.
 - Revisar el inicio de sesión para que sea accesible (Aday: Creo que no le puse etiquetas ni nada, es básico).
 - Página de mangas, información de accesibilidad.
 - Cambiar colores de las tablas (mejorarlas visualmente).
