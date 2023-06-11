@@ -18,19 +18,19 @@
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="navbar-collapse collapse" id="navbarNav">
-        <ul class="navbar-nav flex-d">
+      <div class="navbar-collapse collapse flex-d" id="navbarNav">
+        <ul class="navbar-nav">
           <!-- Elementos de navegación -->
-          <li class="nav-item p-2">
+          <li class="nav-item">
             <a class="nav-link" href="./index.html">Inicio</a>
           </li>
-          <li class="nav-item p-2">
+          <li class="nav-item">
             <a class="nav-link" href="./peliculas.html">Películas</a>
           </li>
-          <li class="nav-item p-2">
+          <li class="nav-item">
             <a class="nav-link" href="./series.html">Series</a>
           </li>
-          <li class="nav-item p-2">
+          <li class="nav-item">
             <a class="nav-link" href="#">Manga</a>
           </li>
           <li class="ml-auto p-2>
