@@ -14,11 +14,11 @@
   <nav class="navbar navbar-expand-md navbar-dark bg-dark">
     <div class="container-fluid">
       <!-- Botón de hamburguesa para navegación en dispositivos móviles -->
-      <button id="navbar-toggler" class="navbar-toggler col-xs-6 col-sm-6 col-md-6 col-lg-6" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button id="navbar-toggler" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="navbar-collapse collapse" id="navbarNav">
+      <div class="navbar-collapse collapse" id="navbarNav col-6 col-xs-6 col-sm-6 col-md-6 col-lg-6">
         <ul class="navbar-nav">
           <!-- Elementos de navegación -->
           <li class="nav-item">
