@@ -21,20 +21,20 @@
       <div class="navbar-collapse collapse" id="navbarNav">
         <ul class="navbar-nav flex-d">
           <!-- Elementos de navegación -->
-          <li class="nav-item">
+          <li class="nav-item p-2">
             <a class="nav-link" href="./index.html">Inicio</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item p-2">
             <a class="nav-link" href="./peliculas.html">Películas</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item p-2">
             <a class="nav-link" href="./series.html">Series</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item p-2">
             <a class="nav-link" href="#">Manga</a>
           </li>
-          <li class="mr-auto">
-            <div class="input-group" id="search-bar">
+          <li>
+            <div class="input-group ml-auto" id="search-bar">
               <input class="form-control" type="search" placeholder="Buscar" aria-label="Buscar">
             </div>
           </li>
