@@ -18,7 +18,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="navbar-collapse collapse" id="navbarNav">
+      <div class="navbar-collapse collapse col-xs-6 col-sm-6 col-md-6 col-lg-6" id="navbarNav">
         <ul class="navbar-nav">
           <!-- Elementos de navegación -->
           <li class="nav-item">
