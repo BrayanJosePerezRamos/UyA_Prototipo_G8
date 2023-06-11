@@ -8,3 +8,7 @@ body {
 footer {
   margin-top: auto;
 }
+
+#iniciar_button {
+  padding: 0.1em 0.8em;
+}

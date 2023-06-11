@@ -34,8 +34,3 @@
 #table-container {
   overflow-y: hidden;
 }
-
-.show-scrollbar {
-  overflow-y: scroll;
-}
-

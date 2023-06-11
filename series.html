@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MyMediaList</title>
     <link rel="stylesheet" href="./CSS/title.css">
-    <link rel="stylesheet" href="./CSS/table.css">
-    <link rel="stylesheet" href="./CSS/movie.css">
+    <!-- <link rel="stylesheet" href="./CSS/movie.css"> -->
     <link rel="stylesheet" href="./CSS/spinner.css">
     <link rel="stylesheet" href="./CSS/series.css">
 
@@ -44,11 +43,6 @@
       </div>
   
       <script>
-        window.addEventListener('load', function() {
-          const tableContainer = document.querySelector('#table-container');
-          tableContainer.classList.add('show-scrollbar');
-        });
-  
         const seriesTable = document.querySelector('#series-table');
   
         async function displaySeriesList(year) {
