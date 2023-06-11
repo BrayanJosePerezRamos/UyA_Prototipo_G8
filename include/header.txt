@@ -11,15 +11,15 @@
   </div>
 
   <!-- Barra de navegación -->
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark justify-content-between">
     <div class="container-fluid">
       <!-- Botón de hamburguesa para navegación en dispositivos móviles -->
       <button id="navbar-toggler" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="navbar-collapse collapse col-md-auto" id="navbarNav">
-        <ul class="navbar-nav ">
+      <div class="navbar-collapse collapse" id="navbarNav">
+        <ul class="navbar-nav col-4 col-xs-4 col-sm-4 col-md-4 col-lg-4">
           <!-- Elementos de navegación -->
           <li class="nav-item">
             <a class="nav-link" href="./index.html">Inicio</a>
@@ -57,7 +57,7 @@
       </script>
 
       <!-- Barra de búsqueda -->
-      <form class="form-inline position-relative col-md-auto">
+      <form class="form-inline position-relative">
         <div class="input-group ml-auto" id="search-bar">
           <input class="form-control" type="search" placeholder="Buscar" aria-label="Buscar">
         </div>
