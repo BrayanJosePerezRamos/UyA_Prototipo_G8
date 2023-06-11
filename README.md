@@ -28,14 +28,14 @@ Recomendaciones para la presentación:
 - Arreglar los footer para que se adapten a distintas pantallas.
     - Este fallo está semiarreglado, ya que el footer se pega a la zona baja pero al desamplair la página se despega. Se debería cambiar el css del footer por uno general de la página.
 - Implementar algún tipo de inicio de sesión (con un usuario por defecto), revisar el inicio de sesión para que sea accesible (Aday: Creo que no le puse etiquetas ni nada, es básico) y crear un perfil del usuario.
-- Arreglar el hecho que los datos de la API no cambian de tamaño (poco accesible).
+- Evitar que las tablas de la api haga falta hacer scroll horizontal.
 - El buscador en moviles con pantallas finas a veces hace cosas extrañas.
 - Seguramente hay errores que se escapan, hay que revisar todo bien.
 - El boton de iniciar sesión se superpone en dispositivos verticales
 - Hacer algo con la lista de recomendaciones, ya que en moviles la lia
+- Solucionar lo de que la cabecera y el footer no se ven en local. (Es un problema?)
 
 ## Sugerencias de Adaycho:
 - Añadir páginas para las reseñas (pueden ser similar a las noticias).
-- Solucionar lo de que la cabecera y el footer no se ven en local.
 - Hacer una página genérica de noticias (y reseñas), además de añadir una sección de comentarios (se puede hacer funcional o no).
 - Añadir alguna página con video.

@@ -32,7 +32,6 @@
 }
 
 #table-container {
-  overflow-x: auto; /* Habilita el desplazamiento horizontal cuando el contenido excede el ancho del contenedor */
   overflow-y: hidden;
 }
 

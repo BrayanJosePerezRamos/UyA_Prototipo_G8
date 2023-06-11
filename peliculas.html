@@ -50,66 +50,56 @@
         </div>
       </div>
       <script>
-        window.addEventListener('load', function() {
-          const tableContainer = document.querySelector('#table-container');
-          tableContainer.classList.add('show-scrollbar');
-        });
-        const movieTableBody = document.querySelector('#movie-table tbody');
-        
+        const movieTable = document.querySelector('#movie-table');
+        const spinner = document.querySelector('#spinner');
+  
         async function displayMovieList(nPages) {
           const movies = await getTopMovies(nPages);
           console.log(movies);
-      
+  
           const coverImages = await getMovieCoverImages(movies);
-      
-          let rowCount = 0;
-          let movieTableRow;
-          
+  
+          const movieContainer = document.createElement('div');
+          movieContainer.className = 'row';
+  
           for (let i = 0; i < movies.length; i++) {
-            if (rowCount === 0) {
-              // crear una nueva fila
-              movieTableRow = document.createElement('tr');
-              movieTableBody.appendChild(movieTableRow);
-            }
-      
-            // crear celdas para la portada y el título
-            const movieCoverCell = document.createElement('td');
-            const movieTitleCell = document.createElement('td');
-      
-            // crear enlace para la portada y envolver la imagen dentro de él
+            const movieDiv = document.createElement('div');
+            movieDiv.className = 'col-xs-12 col-sm-6 col-md-4 col-lg-3';
+  
+            const movieCoverCell = document.createElement('div');
+            const movieTitleCell = document.createElement('div');
+  
             const movieCoverLink = document.createElement('a');
             movieCoverLink.href = await getMoviePage(movies[i]);
             const movieCoverImg = document.createElement('img');
-            movieCoverImg.style.width = '5em'; // establecer el ancho en 5vw
-            movieCoverImg.style.height = 'auto'; // establecer la altura en 5vw
+            movieCoverImg.style.width = '5em';
+            movieCoverImg.style.height = 'auto';
             movieCoverImg.src = coverImages[i];
             movieCoverImg.alt = `${movies[i]} cover image`;
             movieCoverLink.appendChild(movieCoverImg);
             movieCoverCell.appendChild(movieCoverLink);
-      
-            // crear enlace para el título y establecer el href y el texto
+  
             const movieTitleLink = document.createElement('a');
             movieTitleLink.href = await getMoviePage(movies[i]);
             const movieTitle = document.createElement('p');
             movieTitle.textContent = movies[i];
             movieTitleLink.appendChild(movieTitle);
             movieTitleCell.appendChild(movieTitleLink);
-      
-            // agregar celdas a la fila
-            movieTableRow.appendChild(movieCoverCell);
-            movieTableRow.appendChild(movieTitleCell);
-      
-            // aumentar el contador de fila y restablecerlo a 0 si llega a 5
-            rowCount++;
-            if (rowCount === 5) {
-              rowCount = 0;
-            }
+  
+            movieDiv.appendChild(movieCoverCell);
+            movieDiv.appendChild(movieTitleCell);
+  
+            movieContainer.appendChild(movieDiv);
           }
-          /// HAcemos que el spinner deje de verse
-          document.querySelector('#spinner').style.display = 'none';
+  
+          movieTable.innerHTML = '';
+          movieTable.appendChild(movieContainer);
+  
+          spinner.style.display = 'none';
         }
+  
         displayMovieList(20);
-      </script> 
+      </script>
     </div>
 
     <!-- Ponemos un espacio entre el footer y el último elemento -->
