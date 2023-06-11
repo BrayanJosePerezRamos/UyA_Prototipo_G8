@@ -33,8 +33,8 @@
           <li class="nav-item p-2">
             <a class="nav-link" href="#">Manga</a>
           </li>
-          <li>
-            <div class="input-group ml-auto" id="search-bar">
+          <li class="ml-auto p-2>
+            <div class="input-group" id="search-bar">
               <input class="form-control" type="search" placeholder="Buscar" aria-label="Buscar">
             </div>
           </li>
