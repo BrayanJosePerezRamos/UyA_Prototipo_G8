@@ -18,7 +18,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="navbar-collapse collapse col-xs-6 col-sm-6 col-md-6 col-lg-6" id="navbarNav">
+      <div class="navbar-collapse collapse" id="navbarNav">
         <ul class="navbar-nav">
           <!-- Elementos de navegación -->
           <li class="nav-item">
@@ -57,7 +57,7 @@
       </script>
 
       <!-- Barra de búsqueda -->
-      <form class="form-inline">
+      <form class="form-inline float-end">
         <div class="input-group ml-auto">
           <input class="form-control" type="search" placeholder="Buscar" aria-label="Buscar">
           <div class="input-group-append">
