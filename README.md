@@ -25,8 +25,4 @@ Recomendaciones para la presentación:
 - Se aconseja, aunque no se exige que elaboren una presentación que les sirva de guión.
 
 ## Lista de tareas pendientes
-- Revisar el inicio de sesión para que sea accesible (Aday: Creo que no le puse etiquetas ni nada, es básico).
-- Página de mangas, información de accesibilidad.
 - Cambiar colores de las tablas (mejorarlas visualmente).
-- Seguramente hay errores que se escapan, hay que revisar todo bien.
-- Revisar breadcrumbs.
