@@ -14,6 +14,11 @@ function isValidDescription(description) {
   return description.trim().length > 0;
 }
 
+function isValidPassword(password) {
+  // Verificar si la descripción está vacía o solo contiene espacios en blanco
+  return password.trim().length > 0;
+}
+
 function validateContactForm(){
   const form = document.getElementById("myForm");
   const nombreInput = document.getElementById("nombre");
@@ -52,6 +57,41 @@ function validateContactForm(){
     } else {
       descripcionInput.classList.remove("is-invalid");
       descripcionError.style.display = "none";
+    }
+
+    if (isValid) {
+      form.submit();
+    }
+  });
+}
+
+function validateLogin(){
+  const form = document.getElementById("myForm");
+  const emailInput = document.getElementById("email");
+  const passwordInput = document.getElementById("password");
+  const emailError = document.getElementById("emailError");
+  const passwordError = document.getElementById("passwordError");
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    let isValid = true;
+
+    if (!isValidEmail(emailInput.value)) {
+      emailInput.classList.add("is-invalid");
+      emailError.style.display = "block";
+      isValid = false;
+    } else {
+      emailInput.classList.remove("is-invalid");
+      emailError.style.display = "none";
+    }
+
+    if (!isValidPassword(passwordInput.value)) {
+      passwordInput.classList.add("is-invalid");
+      passwordError.style.display = "block";
+      isValid = false;
+    } else {
+      passwordInput.classList.remove("is-invalid");
+      passwordError.style.display = "none";
     }
 
     if (isValid) {
