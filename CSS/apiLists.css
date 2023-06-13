@@ -29,7 +29,7 @@
   vertical-align: middle;
 }
 #movie-table td h2 {
-  font-size: 1vw;
+  font-size: 1em;
 }
 
 #table-container {
@@ -46,7 +46,7 @@
   vertical-align: middle;
 }
 #series-table td h2 {
-  font-size: 1vw;
+  font-size: 1em;
 }
 
 #table-container {
@@ -64,7 +64,7 @@
 }
 
 #manga-table td h2 {
-  font-size: 1vw;
+  font-size: 1em;
 }
 
 #table-container {
