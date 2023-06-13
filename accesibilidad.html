@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyMediaList</title>
+    <link rel="stylesheet" href="./CSS/includes.css">
+    <link rel="stylesheet" href="./CSS/title.css">
+    <link rel="stylesheet" href="./CSS/table.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="./JS/APIrequest.js" type="text/javascript"></script>
+    <script src="./JS/validacion.js" type="text/javascript"></script>
+    <script src="./JS/EmailScript.js" type="text/javascript"></script>
+    <script src="./JS/include.js" type="text/javascript"></script>
+
+  </head>
+  <body>
+    <div id="header-container"></div>
+    <script>includeHeader();</script>
+    </div>
+
+    <!-- breadcrump -->
+    <div class="container py-1"> <!-- Se envuelve el breadcrumb en un contenedor -->
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="./index.html">Inicio</a></li> 
+          <li class="breadcrumb-item active" aria-current="page">Accesibilidad</li> 
+        </ol>
+      </nav>
+    </div> 
+
+    <!-- Información -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 offset-md-2">
+          <article>
+            <h1 tabindex="0">Accesibilidad de la web</h1>
+
+            <div class="article-content">
+              <h2 tabindex="0">Introducción</h2>
+              <p tabindex="0">MyMediaList se ha comprometido a hacer accesible su sitio web de conformidad con el Real Decreto 1112/2018, de 7 de septiembre, sobre accesibilidad de los sitios web y aplicaciones para dispositivos móviles del sector público, por el que se traspone la Directiva (UE) 2016/2102 del Parlamento Europeo y del Consejo, de 26 de octubre de 2016.</p>
+              <p tabindex="0">La presente declaración de accesibilidad se aplica a la web completa.</p>
+
+              <h2 tabindex="0">Situación de cumplimiento</h2>
+              <p tabindex="0">Este sitio web es completamente conforme con el Real Decreto 1112/2018.</p>
+
+              <h3 tabindex="0">Contenido no accesible</h3>
+              <p tabindex="0">El sitio web no tiene falta de conformidad con el real decreto o carga desproporcionada. Si encontramos contenido que no entra dentro del ámbito de la legislación aplicable, dado que la base de datos es ajena a la web.</p>
+              
+              <h2 tabindex="0">Preparación de la presente declaración de accesibilidad</h2>
+              <p tabindex="0">La presente declaración fue preparada el día 18/06/2023. El método empleado para preparar la declaración ha sido una autoevaluación llevada a cabo por el grupo 8 el día 16/06/2023.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+    
+
+    <!-- Ponemos un espacio entre el footer y el último elemento -->
+    <br> <!-- Espacio añadido -->
+    <!-- Footer -->
+    <footer>
+      <div class="footer-container" id="footer-container"></div>
+      <script>includeFooter();</script>
+    </footer>
+    <!-- Footer -->
+  </body>
+</html>
