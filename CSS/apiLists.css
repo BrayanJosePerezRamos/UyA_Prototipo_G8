@@ -20,6 +20,7 @@
   color: white;
 } */
 
+/*************** MOVIES *****************/
 #movie-table {
   text-align: center;
 }
@@ -34,3 +35,39 @@
 #table-container {
   overflow-y: hidden;
 }
+
+
+/*************** SERIES *****************/
+#series-table {
+  text-align: center;
+}
+
+#series-table td {
+  vertical-align: middle;
+}
+#series-table td h2 {
+  font-size: 1vw;
+}
+
+#table-container {
+  overflow-y: hidden;
+}
+
+
+/*************** MANGA *****************/
+#manga-table {
+  text-align: center;
+}
+
+#manga-table td {
+  vertical-align: middle;
+}
+
+#manga-table td h2 {
+  font-size: 1vw;
+}
+
+#table-container {
+  overflow-y: hidden;
+}
+

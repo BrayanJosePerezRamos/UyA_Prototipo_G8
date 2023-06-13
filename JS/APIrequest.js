@@ -224,3 +224,108 @@ async function getMovieCoverImages(movieTitles) {
 //     ul.appendChild(li);
 //   }
 // }
+
+///################ MANGA ///#####################
+async function getTopMangas(perPage = 10) {
+  const query = `
+    query ($perPage: Int) {
+      Page(perPage: $perPage) {
+        media(type: MANGA, sort: POPULARITY_DESC) {
+          title {
+            romaji
+          }
+        }
+      }
+    }
+  `;
+
+  const variables = {
+    perPage: perPage
+  };
+
+  const response = await fetch('https://graphql.anilist.co/', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+    },
+    body: JSON.stringify({
+      query: query,
+      variables: variables
+    })
+  });
+
+  const data = await response.json();
+  const mangaTitles = data.data.Page.media.map(media => media.title.romaji);
+
+  return mangaTitles;
+}
+
+async function getMangaPage(mangaTitle) {
+  const query = `
+    query ($search: String) {
+      Media(search: $search, type: MANGA) {
+        siteUrl
+      }
+    }
+  `;
+
+  const variables = {
+    search: mangaTitle
+  };
+
+  const response = await fetch('https://graphql.anilist.co/', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+    },
+    body: JSON.stringify({
+      query: query,
+      variables: variables
+    })
+  });
+
+  const data = await response.json();
+  const mangaPageUrl = data.data.Media.siteUrl;
+
+  return mangaPageUrl;
+}
+
+async function getMangaCoverImages(mangaTitles) {
+  const query = `
+    query ($search: String) {
+      Media(search: $search, type: MANGA) {
+        coverImage {
+          large
+        }
+      }
+    }
+  `;
+
+  const coverImageUrls = [];
+  
+  for (let i = 0; i < mangaTitles.length; i++) {
+    const variables = {
+      search: mangaTitles[i]
+    };
+
+    const response = await fetch('https://graphql.anilist.co/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+      },
+      body: JSON.stringify({
+        query: query,
+        variables: variables
+      })
+    });
+
+    const data = await response.json();
+    const coverImageUrl = data.data.Media.coverImage.large;
+    coverImageUrls.push(coverImageUrl);
+  }
+
+  return coverImageUrls;
+}
