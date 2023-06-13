@@ -22,36 +22,37 @@
   }
 
 // Recorrer cada reseña del objeto
-reseñas.reseñas.forEach(reseña => {
-  // Crear un elemento <li> para cada reseña
+reseñas.reseñas.forEach((reseña, index) => {
   const li = document.createElement('li');
-  li.classList.add('list-group-item'); // Agregar clase de Bootstrap
+  li.classList.add('list-group-item');
 
-  // Crear el elemento <h3> para el título de la reseña
   const tituloElement = document.createElement('h3');
-  tituloElement.classList.add('mb-2'); // Agregar clase de Bootstrap
-  tituloElement.textContent = reseña.titulo;
-  tituloElement.setAttribute('tabindex', '0'); // Establecer tabindex="0"
+  tituloElement.classList.add('mb-2');
+  
+  // Crear el elemento <a> para el enlace del título
+  const enlaceTitulo = document.createElement('a');
+  enlaceTitulo.href = `reseña${index + 1}.html`; // Enlace a la página de la reseña
+  enlaceTitulo.textContent = reseña.titulo;
+  
+  // Agregar el enlace del título al elemento <h3>
+  tituloElement.appendChild(enlaceTitulo);
+  
+  tituloElement.setAttribute('tabindex', '0');
 
-  // Crear los elementos <p> para el comentario, nombre y fecha de la reseña
   const comentarioElement = document.createElement('p');
   comentarioElement.textContent = reseña.comentario;
-  comentarioElement.setAttribute('tabindex', '0'); // Establecer tabindex="0"
+  comentarioElement.setAttribute('tabindex', '0');
 
   const nombreFechaElement = document.createElement('p');
-  nombreFechaElement.classList.add('text-muted', 'mb-0'); // Agregar clases de Bootstrap
+  nombreFechaElement.classList.add('text-muted', 'mb-0');
   nombreFechaElement.textContent = `Por: ${reseña.nombre} - ${reseña.fecha}`;
-  nombreFechaElement.setAttribute('tabindex', '0'); // Establecer tabindex="0"
+  nombreFechaElement.setAttribute('tabindex', '0');
 
-  // Agregar los elementos al elemento <li>
   li.appendChild(tituloElement);
   li.appendChild(comentarioElement);
   li.appendChild(nombreFechaElement);
 
-  // Agregar el elemento <li> al elemento <ul>
   listaReseñas.appendChild(li);
 });
 
-
-// Agregar clase de Bootstrap al elemento <ul>
 listaReseñas.classList.add('list-group');
