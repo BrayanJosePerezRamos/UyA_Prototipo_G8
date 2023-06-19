@@ -21,6 +21,11 @@ footer h2 {
   font-size: 1.3em;
 }
 
+#footer-links {
+  margin-top: 0.4em; /* Espacio por encima de los div */
+  margin-bottom: 0.4em; /* Espacio por debajo de los div */
+}
+
 #anime-table a:visited {
   color: #9d21a8;
 }
