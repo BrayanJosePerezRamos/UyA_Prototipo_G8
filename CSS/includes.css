@@ -20,3 +20,19 @@ footer {
 footer h2 {
   font-size: 1.3em;
 }
+
+#anime-table a:visited {
+  color: #9d21a8;
+}
+
+#listaReseñas a:visited {
+  color: #9d21a8;
+}
+
+#breadcrumb a:visited {
+  color: #9d21a8;
+}
+
+#table-container a:visited {
+  color: #9d21a8;
+}
