@@ -33,6 +33,7 @@ reseñas.reseñas.forEach((reseña, index) => {
   const enlaceTitulo = document.createElement('a');
   enlaceTitulo.href = `reseña${index + 1}.html`; // Enlace a la página de la reseña
   enlaceTitulo.textContent = reseña.titulo;
+  enlaceTitulo.setAttribute('tabindex', '-1');
   
   // Agregar el enlace del título al elemento <h3>
   tituloElement.appendChild(enlaceTitulo);
